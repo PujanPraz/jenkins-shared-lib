@@ -5,9 +5,9 @@ def call(String projectName, String version){
                          usernameVariable: "USERNAME",
                          passwordVariable: "PASSWORD"
                     )]) {
-                          sh '''
+                          sh """
                             docker login -u "$USERNAME" -p "$PASSWORD"
                             docker push "$USERNAME/${projectName}:${version}"
-                        '''
+                        """
                  }
 }
